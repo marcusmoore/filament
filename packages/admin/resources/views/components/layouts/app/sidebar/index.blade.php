@@ -96,6 +96,7 @@
                     @foreach ($group->getItems() as $item)
                         <x-filament::layouts.app.sidebar.item
                             :active="$item->isActive()"
+                            :label="$item->getLabel()"
                             :icon="$item->getIcon()"
                             :active-icon="$item->getActiveIcon()"
                             :url="$item->getUrl()"

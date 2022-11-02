@@ -3,6 +3,7 @@
     'activeIcon',
     'badge' => null,
     'badgeColor' => null,
+    'label',
     'icon',
     'shouldOpenUrlInNewTab' => false,
     'url',
@@ -11,6 +12,7 @@
 <li @class(['filament-sidebar-item overflow-hidden', 'filament-sidebar-item-active' => $active])>
     <a
         href="{{ $url }}"
+        aria-label="{{ $label }}"
         {!! $shouldOpenUrlInNewTab ? 'target="_blank"' : '' !!}
         x-on:click="window.matchMedia(`(max-width: 1024px)`).matches && $store.sidebar.close()"
         @if (config('filament.layout.sidebar.is_collapsible_on_desktop'))
